@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('id_permission');
+            $table->dropColumn('permission_id');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_permission')->nullable();
+            $table->unsignedBigInteger('permission_id')->nullable();
         });
     }
 };

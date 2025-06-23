@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\savesalleRequest;
-use App\Models\company;
+use App\Models\Company ;
 use App\Models\Salle;
 use App\Traits\ChecksUserRole;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class SalleController extends Controller
         $salles = Salle::where('company_id', $user->company_id)->paginate(5);
         $totalSalle = Salle::where('company_id', $user->company_id)->count();
         
-        $companys = company::all();
+        $companys = Company ::all();
         
         return view('salles.index', compact('salles', 'totalSalle', 'companys'));
     }
@@ -36,7 +36,7 @@ class SalleController extends Controller
             abort(403, "Vous n'avez pas l'autorisation d'accéder à cette ressource.");
         }
         
-        $companys = company::all();
+        $companys = Company ::all();
         return view('salles.create', compact('companys'));
     }
  
@@ -54,7 +54,7 @@ class SalleController extends Controller
             abort(403, "Vous n'avez pas accès à cette salle.");
         }
         
-        $companys = company::all();
+        $companys = Company ::all();
         return view('salles.edit', compact('salle', 'companys'));
     }
  

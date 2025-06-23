@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('responsable')->nullable(); // Responsable du département
             $table->string('telephone')->nullable();
             $table->string('localisation')->nullable(); // Ex : bâtiment, étage...
-            $table->foreignId('company_id')->constrained()->onDelete('cascade');
+             $table->foreignId('company_id')->constrained('company')->onDelete('cascade');
             $table->timestamps(); // cree_le, modifie_le
         });
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\company;
+use App\Models\Company ;
 use App\Models\Departement;
 use App\Models\Salle;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class ComponyController extends Controller
      */
     public function index()
     {
-        $companys = company::paginate();
+        $companys = Company ::paginate();
         return view('companys.index', compact('companys'));
     }
 
@@ -48,7 +48,7 @@ class ComponyController extends Controller
             $validatedData['logo'] = $logoPath;
         }
 
-        company::create($validatedData);
+        Company ::create($validatedData);
 
         return redirect()->route('companys.index')
             ->with('success', 'Entreprise créée avec succès.');
@@ -57,7 +57,7 @@ class ComponyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(company $company)
+    public function show(Company  $company)
     {
         return view('companys.show', compact('company'));
     }
@@ -65,7 +65,7 @@ class ComponyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(company $company)
+    public function edit(Company $company)
     {
         return view('companys.edit', compact('company'));
     }
@@ -73,7 +73,7 @@ class ComponyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, company $company)
+    public function update(Request $request, Company $company)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -103,7 +103,7 @@ class ComponyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(company $company)
+    public function destroy(Company $company)
     {
         
         if ($company->departments()->count() > 0) {

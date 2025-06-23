@@ -7,7 +7,7 @@ use App\Models\Departement;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\company;
+use App\Models\Company ;
 use App\Notifications\SendEmailToAdminRegister;
 use App\Notifications\SendEmailUpdateToAdmin;
 use App\Traits\ChecksAdminRole;
@@ -20,7 +20,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        $companys = company::all();
+        $companys = Company ::all();
         $departements = Departement::pluck('nom', 'id');
         $roles = Role::pluck('nom', 'id');
         $permissions = Permission::pluck('nom', 'id');
@@ -39,7 +39,7 @@ class AdminController extends Controller
     public function create()
     {
 
-        $companys = company::all();
+        $companys = Company ::all();
         $departements = Departement::all();
         $roles = Role::all();
         $permissions = Permission::all();
@@ -54,7 +54,7 @@ class AdminController extends Controller
 
     public function edit(User $user)
     {
-        $companys = company::all();
+        $companys = Company ::all();
         $departements = Departement::all();
         $roles = Role::all();
         $permissions = Permission::all();

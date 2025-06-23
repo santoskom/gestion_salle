@@ -52,16 +52,16 @@ class User extends Authenticatable
         ];
     }
     
-    // public function isAssistantDirection()
-    // {
-    //     $roleAssistant = Role::where('nom', 'Assistant de directions')->first();
+    public function isAssistantDirection()
+    {
+        $roleAssistant = Role::where('nom', 'Assistant de directions')->first();
         
-    //     if (!$roleAssistant) {
-    //         return false;
-    //     }
+        if (!$roleAssistant) {
+            return false;
+        }
         
-    //     return $this->role_id === $roleAssistant->id;
-    // }
+        return $this->role_id === $roleAssistant->id;
+    }
 
     /**
      * Reservations demandées par l'utilisateur

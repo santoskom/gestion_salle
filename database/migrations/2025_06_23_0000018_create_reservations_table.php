@@ -19,10 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_createur')->nullable(); // Assistant de direction qui valide
             $table->string('objet_reunion');
             $table->text('description')->nullable();
-            $table->date('date_debut');
-            $table->date('date_fin');
-            $table->time('heure_debut');
-            $table->time('heure_fin');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
             $table->enum('statut', ['en_attente', 'valide', 'annulee'])->default('en_attente');
             $table->integer('nombreParticipants');
             $table->boolean('rappel_active')->default(false);

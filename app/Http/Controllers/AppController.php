@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\company;
+use App\Models\Company ;
 use App\Models\Reservations;
 use App\Models\Salle;
 use App\Models\User;
@@ -32,7 +32,7 @@ class AppController extends Controller
                 ->count();
             $totalAdministateur = User::where('company_id', $userCompanyId)->count();
 
-            $companyName = company::find($userCompanyId)->name ?? 'Votre entreprise';
+            $companyName = Company ::find($userCompanyId)->name ?? 'Votre entreprise';
         } else {
             $totalReservation = Reservations::count();
             $totalsalle = Salle::count();
