@@ -1,0 +1,232 @@
+
+.nav-link-text,
+.submenu-link {
+    font-size: 1.25rem; /* équivalent à fs-4 */
+    font-weight: bold;
+}
+ /* Agrandir le texte uniquement dans td et th */
+table td, table th {
+font-size: 1.5rem;
+}
+.table-hover tbody tr:hover {
+background-color: #d4edda; /* Vert clair Bootstrap (success background) */
+}
+/* Agrandir les libellés */
+.form-label {
+font-size: 1.4rem;
+font-weight: 500;
+}
+
+/* Agrandir le contenu des champs */
+.form-control {
+font-size: 1.4rem;
+padding: 0.6rem 0.75rem; /* facultatif : agrandir la zone de saisie */
+}
+
+/* Agrandir le texte du placeholder */
+.form-control::placeholder {
+font-size: 1.4rem;
+color: #6c757d; /* couleur grise Bootstrap par défaut */
+}
+
+/* Agrandir les messages d'erreur */
+.text-danger {
+font-size: 1.4rem;
+}
+/* Libellés */
+.form-label,
+.form-check-label {
+font-size: 1.4rem;
+}
+
+/* Champs de formulaire */
+.form-control,
+.form-select {
+font-size: 1.4rem;
+padding: 0.6rem 0.75rem; /* Agrandir la hauteur si besoin */
+}
+
+/* Texte du placeholder */
+.form-control::placeholder {
+font-size: 1.4rem;
+color: #6c757d;
+}
+
+/* Messages d'erreur */
+.invalid-feedback,
+.text-danger {
+font-size: 1.4rem;
+}
+
+/* Pour les checkboxes et radio */
+.form-check-input {
+transform: scale(1.2); /* Agrandir la case à cocher */
+margin-top: 0.35rem;
+}
+
+  /* Titre de page */
+  .app-page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Champs de recherche */
+.search-orders {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.search-orders::placeholder {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* Boutons personnalisés */
+.app-btn-secondary {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Icône + texte dans bouton */
+.app-btn-secondary svg {
+    margin-right: 0.3rem;
+    vertical-align: middle;
+}
+
+.animated {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+/* Icône animée sur le survol */
+
+/* modal    */
+.modal-profile {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #888;
+}
+
+.nav-link {
+    color: #333;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #e8f5e9; /* vert clair */
+    border-left: 3px solid #2e7d32; /* vert foncé */
+    color: #2e7d32;
+  }
+  
+  .nav-link.active {
+    background-color: #e8f5e9;
+    border-left: 3px solid #2e7d32;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+	  
+
+  .nnav-item{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .nav-item > li {
+    position: relative;
+  }
+  
+
+  .nav-item > li > a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+
+.nav-item .submenu {
+    display: none;
+    position: relative;
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+
+.nav-link > li:hover .has-submenu {
+    display: block;
+  }
+  
+
+.nav-item> li:hover > a {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 3px solid #2e7d32;
+  }
+
+
+  .table-wrapper {
+    overflow: auto; /* Active le scroll */
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge Legacy */
+  }
+  
+  .table-wrapper::-webkit-scrollbar {
+    display: none; /* Pour Chrome, Safari, et Edge Chromium */
+  }
+
+  .truncate {
+    max-width: 200px;       /* ajuste selon la largeur désirée */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px; /* à ajuster */
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

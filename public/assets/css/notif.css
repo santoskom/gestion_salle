@@ -1,0 +1,161 @@
+/* Styles pour les notifications */
+
+/* Badge de compteur de notifications */
+.icon-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 11px;
+    min-width: 16px;
+    min-height: 16px;
+    padding: 2px;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour l'icône de notification */
+.nav-item.dropdown-notifications {
+    position: relative;
+}
+
+.nav-item.dropdown-notifications .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Style pour le dropdown des notifications */
+.dropdown-notifications .dropdown-menu {
+    width: 320px;
+    padding: 0;
+    margin: 0;
+    right: -12px;
+    left: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.dropdown-menu-header {
+    border-bottom: 1px solid #e7e9ed;
+}
+
+.dropdown-menu-title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.dropdown-menu-content .item {
+    border-bottom: 1px solid #e7e9ed;
+}
+
+.dropdown-menu-content .item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu-content .item .desc {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+}
+
+.dropdown-menu-content .item .meta {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.dropdown-menu-content .item .link-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.app-icon-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    color: #6c757d;
+}
+
+.icon-holder-mono {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-menu-footer {
+    border-top: 1px solid #e7e9ed;
+}
+
+.dropdown-menu-footer a {
+    color: #5d6778;
+    text-decoration: none;
+}
+
+.dropdown-menu-footer a:hover {
+    color: #252930;
+}
+
+/* Style pour les notifications non lues */
+.item.bg-light {
+    background-color: #f8f9fa;
+}
+
+/* Page principale des notifications */
+.notifications-container .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.notifications-container .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e7e9ed;
+    padding: 1rem;
+}
+
+.notifications-container .list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+}
+
+.notifications-container .list-group-item:first-child {
+    border-top: none;
+}
+
+.notifications-container .list-group-item.unread {
+    background-color: #f8f9fa;
+}
+
+.notifications-container .notification-actions {
+    margin-top: 1rem;
+}
+
+.notifications-container .notification-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.notifications-container .notification-message {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.notifications-container .notification-time {
+    font-size: 0.75rem;
+    color: #6c757d;
+}

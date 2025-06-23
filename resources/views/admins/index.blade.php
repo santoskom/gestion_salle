@@ -1,0 +1,106 @@
+@extends('layoutss.template')
+
+@section('content')
+    <div class="row g-3 mb-4 align-items-center justify-content-between">
+        <div class="col-auto">
+            <h1 class="app-page-title mb-0">Utilisateur de l application</h1>
+        </div>
+        <div class="col-auto">
+            <div class="page-utilities">
+                <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                    <div class="col-auto">
+                        {{-- <form class="table-search-form row gx-1 align-items-center">
+					                    <div class="col-auto">
+					                        <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
+					                    </div>
+					                    <div class="col-auto">
+					                        <button type="submit" class="btn app-btn-secondary">Search</button>
+					                    </div>
+					                </form> --}}
+
+                    </div><!--//col-->
+
+                    <div class="col-auto">
+                        <a class="btn app-btn-secondary" href="{{ route('admins.create') }}">
+
+                            Ajouter un admin
+                        </a>
+                    </div>
+                </div><!--//row-->
+            </div><!--//table-utilities-->
+        </div><!--//col-auto-->
+    </div><!--//row-->
+
+    @if (Session::get('Sussess_message'))
+        <div class="alert alert-success">{{ Session::get('Sussess_message') }}</div>
+    @endif
+
+
+    <div class="tab-content" id="orders-table-tab-content">
+        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+            <div class="app-card app-card-orders-table shadow-sm mb-5">
+                <div class="app-card-body">
+                    <div class="table-responsive table-wrapper">
+                        <table class="table app-table-hover mb-0 text-left table-wrapper">
+                            <thead>
+                                <tr>
+                                    <th class="cell">Nom</th>
+                                    <th class="cell">Email</th>
+                                    <th class="cell">Rôle</th>
+                                    <th class="cell">entreprise</th>
+                                    <th class="cell">departement </th>
+                                    <th class="cell">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($users as $user)
+                                    <tr>
+                                        <td class="cell">
+                                            <span class="text-truncate">{{ $user->name }}</span>
+                                        </td>
+                                        <td class="cell">{{ $user->email }}</td>
+                                        <td class="cell">{{ $roles[$user->id_role] ?? '—' }}</td>
+                                        <td class="cell">{{ $user->company->name ?? '—' }}</td>
+                                        <td class="cell">{{ $departements[$user->departement_id] ?? '—' }}</td>
+                                        <td class="cell">
+                                            <a class="btn btn-sm btn-warning text-white"
+                                                href="{{ route('admins.edit', $user->id) }}"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                                                </svg></a>
+                                            <a class="btn btn-sm btn-danger"
+                                                href="{{ route('admins.delete', $user->id) }}"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                                </svg></a>
+                                        </td>
+
+
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="cell" colspan="2">Aucune admins ajouter</td>
+
+                                    </tr>
+                                @endforelse
+
+                            </tbody>
+                        </table>
+                    </div><!--//table-responsive-->
+
+                </div><!--//app-card-body-->
+            </div><!--//app-card-->
+            <nav class="app-pagination">
+                {{ $users->Links() }}
+            </nav><!--//app-pagination-->
+
+        </div><!--//tab-pane-->
+
+        <div class="tab-pane fade" id="orders-paid" role="tabpanel" aria-labelledby="orders-paid-tab">
+
+        </div><!--//tab-content-->
+    @endsection
